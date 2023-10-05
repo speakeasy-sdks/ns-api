@@ -7,7 +7,7 @@
 </div>
 
 <!-- Start SDK Installation -->
-# SDK Installation
+## SDK Installation
 
 ```bash
 pip install git+https://github.com/speakeasy-sdks/ns-api.git
@@ -16,8 +16,6 @@ pip install git+https://github.com/speakeasy-sdks/ns-api.git
 
 ## SDK Example Usage
 <!-- Start SDK Example Usage -->
-
-
 ```python
 import platform
 from platform.models import operations
@@ -97,10 +95,10 @@ if res.create_a_npa_policy_200_application_json_object is not None:
 <!-- End SDK Example Usage -->
 
 <!-- Start SDK Available Operations -->
-# Available Resources and Operations
+## Available Resources and Operations
 
 
-## [npa](docs/sdks/npa/README.md)
+### [npa](docs/sdks/npa/README.md)
 
 * [create_a_npa_policy](docs/sdks/npa/README.md#create_a_npa_policy) - Create a npa policy
 * [create_a_npa_policy_group](docs/sdks/npa/README.md#create_a_npa_policy_group) - Create a npa policy group
@@ -110,7 +108,7 @@ if res.create_a_npa_policy_200_application_json_object is not None:
 * [get_list_of_npa_policy_groups](docs/sdks/npa/README.md#get_list_of_npa_policy_groups) - Get list of npa policy groups
 * [patch_a_npa_policy](docs/sdks/npa/README.md#patch_a_npa_policy) - Patch a npa policy
 
-## [policy](docs/sdks/policy/README.md)
+### [policy](docs/sdks/policy/README.md)
 
 * [create_a_npa_policy](docs/sdks/policy/README.md#create_a_npa_policy) - Create a npa policy
 * [create_a_npa_policy_group](docs/sdks/policy/README.md#create_a_npa_policy_group) - Create a npa policy group
@@ -123,8 +121,6 @@ if res.create_a_npa_policy_200_application_json_object is not None:
 
 <!-- Start Dev Containers -->
 
-
-
 <!-- End Dev Containers -->
 
 <!-- Start Pagination -->
@@ -135,8 +131,6 @@ returned response object will have a `Next` method that can be called to pull do
 return value of `Next` is `None`, then there are no more pages to be fetched.
 
 Here's an example of one such pagination call:
-
-
 <!-- End Pagination -->
 
 <!-- Placeholder for Future Speakeasy SDK Sections -->
