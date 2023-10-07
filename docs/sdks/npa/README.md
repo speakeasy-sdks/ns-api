@@ -34,6 +34,7 @@ req = operations.CreateANpaPolicyRequest(
             classification='<string>',
             excluded_users=[
                 '<string>',
+                '<string>',
             ],
             external_dlp='<boolean>',
             json_version='<integer>',
@@ -42,18 +43,23 @@ req = operations.CreateANpaPolicyRequest(
             ),
             net_location_obj=[
                 '<string>',
+                '<string>',
             ],
             policy_type='private-app',
             private_app_ids=[
                 '<string>',
+                '<string>',
             ],
             private_app_tag_ids=[
+                '<string>',
                 '<string>',
             ],
             private_app_tags=[
                 '<string>',
+                '<string>',
             ],
             private_apps=[
+                '<string>',
                 '<string>',
             ],
             private_apps_with_activities=[
@@ -62,6 +68,33 @@ req = operations.CreateANpaPolicyRequest(
                         operations.CreateANpaPolicyRequestBodyRuleDataPrivateAppsWithActivitiesActivities(
                             activity='any',
                             list_of_constraints=[
+                                '<string>',
+                                '<string>',
+                            ],
+                        ),
+                        operations.CreateANpaPolicyRequestBodyRuleDataPrivateAppsWithActivitiesActivities(
+                            activity='any',
+                            list_of_constraints=[
+                                '<string>',
+                                '<string>',
+                            ],
+                        ),
+                    ],
+                    app_name='<string>',
+                ),
+                operations.CreateANpaPolicyRequestBodyRuleDataPrivateAppsWithActivities(
+                    activities=[
+                        operations.CreateANpaPolicyRequestBodyRuleDataPrivateAppsWithActivitiesActivities(
+                            activity='any',
+                            list_of_constraints=[
+                                '<string>',
+                                '<string>',
+                            ],
+                        ),
+                        operations.CreateANpaPolicyRequestBodyRuleDataPrivateAppsWithActivitiesActivities(
+                            activity='any',
+                            list_of_constraints=[
+                                '<string>',
                                 '<string>',
                             ],
                         ),
@@ -72,9 +105,11 @@ req = operations.CreateANpaPolicyRequest(
             show_dlp_profile_action_table='<boolean>',
             src_countries=[
                 '<string>',
+                '<string>',
             ],
             user_type='user',
             users=[
+                '<string>',
                 '<string>',
             ],
             version='<integer>',
@@ -318,6 +353,7 @@ req = operations.PatchANpaPolicyRequest(
             classification='<string>',
             excluded_users=[
                 '<string>',
+                '<string>',
             ],
             external_dlp='<boolean>',
             json_version='<integer>',
@@ -326,18 +362,23 @@ req = operations.PatchANpaPolicyRequest(
             ),
             net_location_obj=[
                 '<string>',
+                '<string>',
             ],
             policy_type='private-app',
             private_app_ids=[
                 '<string>',
+                '<string>',
             ],
             private_app_tag_ids=[
+                '<string>',
                 '<string>',
             ],
             private_app_tags=[
                 '<string>',
+                '<string>',
             ],
             private_apps=[
+                '<string>',
                 '<string>',
             ],
             private_apps_with_activities=[
@@ -346,6 +387,33 @@ req = operations.PatchANpaPolicyRequest(
                         operations.PatchANpaPolicyRequestBodyRuleDataPrivateAppsWithActivitiesActivities(
                             activity='any',
                             list_of_constraints=[
+                                '<string>',
+                                '<string>',
+                            ],
+                        ),
+                        operations.PatchANpaPolicyRequestBodyRuleDataPrivateAppsWithActivitiesActivities(
+                            activity='any',
+                            list_of_constraints=[
+                                '<string>',
+                                '<string>',
+                            ],
+                        ),
+                    ],
+                    app_name='<string>',
+                ),
+                operations.PatchANpaPolicyRequestBodyRuleDataPrivateAppsWithActivities(
+                    activities=[
+                        operations.PatchANpaPolicyRequestBodyRuleDataPrivateAppsWithActivitiesActivities(
+                            activity='any',
+                            list_of_constraints=[
+                                '<string>',
+                                '<string>',
+                            ],
+                        ),
+                        operations.PatchANpaPolicyRequestBodyRuleDataPrivateAppsWithActivitiesActivities(
+                            activity='any',
+                            list_of_constraints=[
+                                '<string>',
                                 '<string>',
                             ],
                         ),
@@ -356,9 +424,11 @@ req = operations.PatchANpaPolicyRequest(
             show_dlp_profile_action_table='<boolean>',
             src_countries=[
                 '<string>',
+                '<string>',
             ],
             user_type='user',
             users=[
+                '<string>',
                 '<string>',
             ],
             version='<integer>',
