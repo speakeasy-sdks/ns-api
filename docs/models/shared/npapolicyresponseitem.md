@@ -1,0 +1,11 @@
+# NpaPolicyResponseItem
+
+
+## Fields
+
+| Field                                                                   | Type                                                                    | Required                                                                | Description                                                             | Example                                                                 |
+| ----------------------------------------------------------------------- | ----------------------------------------------------------------------- | ----------------------------------------------------------------------- | ----------------------------------------------------------------------- | ----------------------------------------------------------------------- |
+| `group_id`                                                              | *Optional[int]*                                                         | :heavy_minus_sign:                                                      | N/A                                                                     | 1                                                                       |
+| `rule_data`                                                             | [Optional[NpaPolicyRuleData]](../../models/shared/npapolicyruledata.md) | :heavy_minus_sign:                                                      | N/A                                                                     |                                                                         |
+| `rule_id`                                                               | *Optional[int]*                                                         | :heavy_minus_sign:                                                      | N/A                                                                     | 1                                                                       |
+| `rule_name`                                                             | *Optional[str]*                                                         | :heavy_minus_sign:                                                      | N/A                                                                     | van-test                                                                |

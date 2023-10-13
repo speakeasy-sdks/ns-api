@@ -3,113 +3,19 @@
 
 ```python
 import platform
-from platform.models import operations
+from platform.models import operations, shared
 
-s = platform.Platform()
-
-req = operations.CreateANpaPolicyRequest(
-    request_body=operations.CreateANpaPolicyRequestBody(
-        description='<string>',
-        group_id='<string>',
-        rule_data=operations.CreateANpaPolicyRequestBodyRuleData(
-            access_method='Clientless',
-            b_negate_net_location='<boolean>',
-            b_negate_src_countries='<boolean>',
-            classification='<string>',
-            excluded_users=[
-                '<string>',
-                '<string>',
-            ],
-            external_dlp='<boolean>',
-            json_version='<integer>',
-            match_criteria_action=operations.CreateANpaPolicyRequestBodyRuleDataMatchCriteriaAction(
-                action_name='allow',
-            ),
-            net_location_obj=[
-                '<string>',
-                '<string>',
-            ],
-            policy_type='private-app',
-            private_app_ids=[
-                '<string>',
-                '<string>',
-            ],
-            private_app_tag_ids=[
-                '<string>',
-                '<string>',
-            ],
-            private_app_tags=[
-                '<string>',
-                '<string>',
-            ],
-            private_apps=[
-                '<string>',
-                '<string>',
-            ],
-            private_apps_with_activities=[
-                operations.CreateANpaPolicyRequestBodyRuleDataPrivateAppsWithActivities(
-                    activities=[
-                        operations.CreateANpaPolicyRequestBodyRuleDataPrivateAppsWithActivitiesActivities(
-                            activity='any',
-                            list_of_constraints=[
-                                '<string>',
-                                '<string>',
-                            ],
-                        ),
-                        operations.CreateANpaPolicyRequestBodyRuleDataPrivateAppsWithActivitiesActivities(
-                            activity='any',
-                            list_of_constraints=[
-                                '<string>',
-                                '<string>',
-                            ],
-                        ),
-                    ],
-                    app_name='<string>',
-                ),
-                operations.CreateANpaPolicyRequestBodyRuleDataPrivateAppsWithActivities(
-                    activities=[
-                        operations.CreateANpaPolicyRequestBodyRuleDataPrivateAppsWithActivitiesActivities(
-                            activity='any',
-                            list_of_constraints=[
-                                '<string>',
-                                '<string>',
-                            ],
-                        ),
-                        operations.CreateANpaPolicyRequestBodyRuleDataPrivateAppsWithActivitiesActivities(
-                            activity='any',
-                            list_of_constraints=[
-                                '<string>',
-                                '<string>',
-                            ],
-                        ),
-                    ],
-                    app_name='<string>',
-                ),
-            ],
-            show_dlp_profile_action_table='<boolean>',
-            src_countries=[
-                '<string>',
-                '<string>',
-            ],
-            user_type='user',
-            users=[
-                '<string>',
-                '<string>',
-            ],
-            version='<integer>',
-        ),
-        rule_name='<string>',
-        rule_order=operations.CreateANpaPolicyRequestBodyRuleOrder(
-            order='top',
-            position='<integer>',
-        ),
-    ),
-    silent='0',
+s = platform.Platform(
+    api_key="",
 )
 
-res = s.npa.create_a_npa_policy(req)
+req = operations.DeleteNpaRulesIDRequest(
+    id=324988,
+)
 
-if res.create_a_npa_policy_200_application_json_object is not None:
+res = s.platform.delete_npa_rules_id_(req)
+
+if res.delete_npa_rules_id_200_application_json_object is not None:
     # handle response
     pass
 ```

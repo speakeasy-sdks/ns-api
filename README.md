@@ -18,113 +18,19 @@ pip install git+https://github.com/speakeasy-sdks/ns-api.git
 <!-- Start SDK Example Usage -->
 ```python
 import platform
-from platform.models import operations
+from platform.models import operations, shared
 
-s = platform.Platform()
-
-req = operations.CreateANpaPolicyRequest(
-    request_body=operations.CreateANpaPolicyRequestBody(
-        description='<string>',
-        group_id='<string>',
-        rule_data=operations.CreateANpaPolicyRequestBodyRuleData(
-            access_method='Clientless',
-            b_negate_net_location='<boolean>',
-            b_negate_src_countries='<boolean>',
-            classification='<string>',
-            excluded_users=[
-                '<string>',
-                '<string>',
-            ],
-            external_dlp='<boolean>',
-            json_version='<integer>',
-            match_criteria_action=operations.CreateANpaPolicyRequestBodyRuleDataMatchCriteriaAction(
-                action_name='allow',
-            ),
-            net_location_obj=[
-                '<string>',
-                '<string>',
-            ],
-            policy_type='private-app',
-            private_app_ids=[
-                '<string>',
-                '<string>',
-            ],
-            private_app_tag_ids=[
-                '<string>',
-                '<string>',
-            ],
-            private_app_tags=[
-                '<string>',
-                '<string>',
-            ],
-            private_apps=[
-                '<string>',
-                '<string>',
-            ],
-            private_apps_with_activities=[
-                operations.CreateANpaPolicyRequestBodyRuleDataPrivateAppsWithActivities(
-                    activities=[
-                        operations.CreateANpaPolicyRequestBodyRuleDataPrivateAppsWithActivitiesActivities(
-                            activity='any',
-                            list_of_constraints=[
-                                '<string>',
-                                '<string>',
-                            ],
-                        ),
-                        operations.CreateANpaPolicyRequestBodyRuleDataPrivateAppsWithActivitiesActivities(
-                            activity='any',
-                            list_of_constraints=[
-                                '<string>',
-                                '<string>',
-                            ],
-                        ),
-                    ],
-                    app_name='<string>',
-                ),
-                operations.CreateANpaPolicyRequestBodyRuleDataPrivateAppsWithActivities(
-                    activities=[
-                        operations.CreateANpaPolicyRequestBodyRuleDataPrivateAppsWithActivitiesActivities(
-                            activity='any',
-                            list_of_constraints=[
-                                '<string>',
-                                '<string>',
-                            ],
-                        ),
-                        operations.CreateANpaPolicyRequestBodyRuleDataPrivateAppsWithActivitiesActivities(
-                            activity='any',
-                            list_of_constraints=[
-                                '<string>',
-                                '<string>',
-                            ],
-                        ),
-                    ],
-                    app_name='<string>',
-                ),
-            ],
-            show_dlp_profile_action_table='<boolean>',
-            src_countries=[
-                '<string>',
-                '<string>',
-            ],
-            user_type='user',
-            users=[
-                '<string>',
-                '<string>',
-            ],
-            version='<integer>',
-        ),
-        rule_name='<string>',
-        rule_order=operations.CreateANpaPolicyRequestBodyRuleOrder(
-            order='top',
-            position='<integer>',
-        ),
-    ),
-    silent='0',
+s = platform.Platform(
+    api_key="",
 )
 
-res = s.npa.create_a_npa_policy(req)
+req = operations.DeleteNpaRulesIDRequest(
+    id=324988,
+)
 
-if res.create_a_npa_policy_200_application_json_object is not None:
+res = s.platform.delete_npa_rules_id_(req)
+
+if res.delete_npa_rules_id_200_application_json_object is not None:
     # handle response
     pass
 ```
@@ -133,26 +39,13 @@ if res.create_a_npa_policy_200_application_json_object is not None:
 <!-- Start SDK Available Operations -->
 ## Available Resources and Operations
 
+### [Platform SDK](docs/sdks/platform/README.md)
 
-### [npa](docs/sdks/npa/README.md)
-
-* [create_a_npa_policy](docs/sdks/npa/README.md#create_a_npa_policy) - Create a npa policy
-* [create_a_npa_policy_group](docs/sdks/npa/README.md#create_a_npa_policy_group) - Create a npa policy group
-* [delete_a_npa_policy](docs/sdks/npa/README.md#delete_a_npa_policy) - Delete a npa policy
-* [get_a_npa_policy](docs/sdks/npa/README.md#get_a_npa_policy) - Get a npa policy
-* [get_list_of_npa_policies](docs/sdks/npa/README.md#get_list_of_npa_policies) - Get list of npa policies
-* [get_list_of_npa_policy_groups](docs/sdks/npa/README.md#get_list_of_npa_policy_groups) - Get list of npa policy groups
-* [patch_a_npa_policy](docs/sdks/npa/README.md#patch_a_npa_policy) - Patch a npa policy
-
-### [policy](docs/sdks/policy/README.md)
-
-* [create_a_npa_policy](docs/sdks/policy/README.md#create_a_npa_policy) - Create a npa policy
-* [create_a_npa_policy_group](docs/sdks/policy/README.md#create_a_npa_policy_group) - Create a npa policy group
-* [delete_a_npa_policy](docs/sdks/policy/README.md#delete_a_npa_policy) - Delete a npa policy
-* [get_a_npa_policy](docs/sdks/policy/README.md#get_a_npa_policy) - Get a npa policy
-* [get_list_of_npa_policies](docs/sdks/policy/README.md#get_list_of_npa_policies) - Get list of npa policies
-* [get_list_of_npa_policy_groups](docs/sdks/policy/README.md#get_list_of_npa_policy_groups) - Get list of npa policy groups
-* [patch_a_npa_policy](docs/sdks/policy/README.md#patch_a_npa_policy) - Patch a npa policy
+* [delete_npa_rules_id_](docs/sdks/platform/README.md#delete_npa_rules_id_) - Delete a npa policy
+* [get_npa_rules](docs/sdks/platform/README.md#get_npa_rules) - Get list of npa policies
+* [get_npa_rules_id_](docs/sdks/platform/README.md#get_npa_rules_id_) - Get a npa policy
+* [patch_npa_rules_id_](docs/sdks/platform/README.md#patch_npa_rules_id_) - Patch a npa policy
+* [post_npa_rules](docs/sdks/platform/README.md#post_npa_rules) - Create a npa policy
 <!-- End SDK Available Operations -->
 
 <!-- Start Dev Containers -->
