@@ -111,5 +111,6 @@ res = s.npa.create_a_npa_policy(req)
 
 if res.create_a_npa_policy_200_application_json_object is not None:
     # handle response
+    pass
 ```
 <!-- End SDK Example Usage -->

@@ -127,6 +127,7 @@ res = s.npa.create_a_npa_policy(req)
 
 if res.create_a_npa_policy_200_application_json_object is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -169,6 +170,7 @@ res = s.npa.create_a_npa_policy_group(req)
 
 if res.create_a_npa_policy_group_200_application_json_object is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -203,6 +205,7 @@ res = s.npa.delete_a_npa_policy(req)
 
 if res.delete_a_npa_policy_200_application_json_object is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -238,6 +241,7 @@ res = s.npa.get_a_npa_policy(req)
 
 if res.get_a_npa_policy_200_application_json_object is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -277,6 +281,7 @@ res = s.npa.get_list_of_npa_policies(req)
 
 if res.get_list_of_npa_policies_200_application_json_objects is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -316,6 +321,7 @@ res = s.npa.get_list_of_npa_policy_groups(req)
 
 if res.get_list_of_npa_policy_groups_200_application_json_objects is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -447,6 +453,7 @@ res = s.npa.patch_a_npa_policy(req)
 
 if res.patch_a_npa_policy_200_application_json_object is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
