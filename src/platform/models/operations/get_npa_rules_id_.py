@@ -10,7 +10,6 @@ from platform import utils
 from typing import Optional
 
 
-
 @dataclasses.dataclass
 class GetNpaRulesIDRequest:
     id: int = dataclasses.field(metadata={'path_param': { 'field_name': 'id', 'style': 'simple', 'explode': False }})
@@ -26,14 +25,12 @@ class GetNpaRulesID200ApplicationJSONStatus(str, Enum):
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class GetNpaRulesID200ApplicationJSON:
     r"""successful operation"""
     data: Optional[shared_npa_policy_response_item.NpaPolicyResponseItem] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('data'), 'exclude': lambda f: f is None }})
     status: Optional[GetNpaRulesID200ApplicationJSONStatus] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('status'), 'exclude': lambda f: f is None }})
     
-
 
 
 

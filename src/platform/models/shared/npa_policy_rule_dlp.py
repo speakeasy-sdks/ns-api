@@ -5,7 +5,7 @@ import dataclasses
 from dataclasses_json import Undefined, dataclass_json
 from enum import Enum
 from platform import utils
-from typing import Optional
+from typing import List, Optional
 
 class NpaPolicyRuleDlpActions(str, Enum):
     ALLOW = 'allow'
@@ -16,10 +16,9 @@ class NpaPolicyRuleDlpActions(str, Enum):
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class NpaPolicyRuleDlp:
-    actions: Optional[list[NpaPolicyRuleDlpActions]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('actions'), 'exclude': lambda f: f is None }})
+    actions: Optional[List[NpaPolicyRuleDlpActions]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('actions'), 'exclude': lambda f: f is None }})
     dlp_profile: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('dlp_profile'), 'exclude': lambda f: f is None }})
     
 

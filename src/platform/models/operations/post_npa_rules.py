@@ -14,14 +14,12 @@ class PostNpaRulesSilent(str, Enum):
     ZERO = '0'
 
 
-
 @dataclasses.dataclass
 class PostNpaRulesRequest:
     npa_policy_request: shared_npa_policy_request.NpaPolicyRequest = dataclasses.field(metadata={'request': { 'media_type': 'application/json' }})
     silent: Optional[PostNpaRulesSilent] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'silent', 'style': 'form', 'explode': True }})
     r"""flag to skip output except status code"""
     
-
 
 
 

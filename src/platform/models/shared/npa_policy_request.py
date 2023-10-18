@@ -16,7 +16,6 @@ class NpaPolicyRequestRuleOrderOrder(str, Enum):
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class NpaPolicyRequestRuleOrder:
     order: Optional[NpaPolicyRequestRuleOrderOrder] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('order'), 'exclude': lambda f: f is None }})
@@ -28,7 +27,6 @@ class NpaPolicyRequestRuleOrder:
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class NpaPolicyRequest:
     description: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('description'), 'exclude': lambda f: f is None }})

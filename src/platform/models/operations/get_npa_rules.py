@@ -4,8 +4,7 @@ from __future__ import annotations
 import dataclasses
 import requests as requests_http
 from ..shared import npa_policy_response_item as shared_npa_policy_response_item
-from typing import Optional
-
+from typing import List, Optional
 
 
 @dataclasses.dataclass
@@ -26,14 +25,13 @@ class GetNpaRulesRequest:
 
 
 
-
 @dataclasses.dataclass
 class GetNpaRulesResponse:
     content_type: str = dataclasses.field()
     r"""HTTP response content type for this operation"""
     status_code: int = dataclasses.field()
     r"""HTTP response status code for this operation"""
-    npa_policy_response: Optional[list[shared_npa_policy_response_item.NpaPolicyResponseItem]] = dataclasses.field(default=None)
+    npa_policy_response: Optional[List[shared_npa_policy_response_item.NpaPolicyResponseItem]] = dataclasses.field(default=None)
     r"""successful operation"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
     r"""Raw HTTP response; suitable for custom response parsing"""

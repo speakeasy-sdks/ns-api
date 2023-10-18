@@ -4,7 +4,7 @@ import requests as requests_http
 from .sdkconfiguration import SDKConfiguration
 from platform import utils
 from platform.models import errors, operations, shared
-from typing import Optional
+from typing import Dict, List, Optional
 
 class Platform:
     r"""npa_policy: NPA policy CRUD operations."""
@@ -17,7 +17,7 @@ class Platform:
                  tenant: str = None,
                  server_idx: int = None,
                  server_url: str = None,
-                 url_params: dict[str, str] = None,
+                 url_params: Dict[str, str] = None,
                  client: requests_http.Session = None,
                  retry_config: utils.RetryConfig = None
                  ) -> None:
@@ -34,7 +34,7 @@ class Platform:
         :param server_url: The server URL to use for all operations
         :type server_url: str
         :param url_params: Parameters to optionally template the server URL with
-        :type url_params: dict[str, str]
+        :type url_params: Dict[str, str]
         :param client: The requests.Session HTTP client to use for all operations
         :type client: requests_http.Session
         :param retry_config: The utils.RetryConfig to use globally
@@ -121,7 +121,7 @@ class Platform:
         
         if http_res.status_code == 200:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[list[shared.NpaPolicyResponseItem]])
+                out = utils.unmarshal_json(http_res.text, Optional[List[shared.NpaPolicyResponseItem]])
                 res.npa_policy_response = out
             else:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)

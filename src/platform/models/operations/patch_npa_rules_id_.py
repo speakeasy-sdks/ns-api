@@ -16,7 +16,6 @@ class PatchNpaRulesIDSilent(str, Enum):
     ZERO = '0'
 
 
-
 @dataclasses.dataclass
 class PatchNpaRulesIDRequest:
     id: int = dataclasses.field(metadata={'path_param': { 'field_name': 'id', 'style': 'simple', 'explode': False }})
@@ -33,14 +32,12 @@ class PatchNpaRulesID200ApplicationJSONStatus(str, Enum):
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class PatchNpaRulesID200ApplicationJSON:
     r"""successful operation"""
     data: Optional[shared_npa_policy_response_item.NpaPolicyResponseItem] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('data'), 'exclude': lambda f: f is None }})
     status: Optional[PatchNpaRulesID200ApplicationJSONStatus] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('status'), 'exclude': lambda f: f is None }})
     
-
 
 
 
