@@ -182,7 +182,7 @@ req = operations.PatchNpaRulesIDRequest(
                     activities=[
                         shared.NpaPolicyRuleDataPrivateAppsWithActivitiesActivities(
                             list_of_constraints=[
-                                'Chevrolet',
+                                'string',
                             ],
                         ),
                     ],
@@ -289,7 +289,7 @@ req = operations.PostNpaRulesRequest(
                     activities=[
                         shared.NpaPolicyRuleDataPrivateAppsWithActivitiesActivities(
                             list_of_constraints=[
-                                'woman',
+                                'string',
                             ],
                         ),
                     ],
