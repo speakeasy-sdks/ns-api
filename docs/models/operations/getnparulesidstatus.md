@@ -1,4 +1,4 @@
-# DeleteNpaRulesID200ApplicationJSONStatus
+# GetNpaRulesIDStatus
 
 
 ## Values

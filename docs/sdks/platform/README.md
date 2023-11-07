@@ -21,7 +21,7 @@ Delete a npa policy with rule id
 
 ```python
 import platform
-from platform.models import operations, shared
+from platform.models import operations
 
 s = platform.Platform(
     api_key="",
@@ -31,9 +31,9 @@ req = operations.DeleteNpaRulesIDRequest(
     id=324988,
 )
 
-res = s.platform.delete_npa_rules_id_(req)
+res = s.delete_npa_rules_id_(req)
 
-if res.delete_npa_rules_id_200_application_json_object is not None:
+if res.object is not None:
     # handle response
     pass
 ```
@@ -58,7 +58,7 @@ Get list of npa policies
 
 ```python
 import platform
-from platform.models import operations, shared
+from platform.models import operations
 
 s = platform.Platform(
     api_key="",
@@ -66,7 +66,7 @@ s = platform.Platform(
 
 req = operations.GetNpaRulesRequest()
 
-res = s.platform.get_npa_rules(req)
+res = s.get_npa_rules(req)
 
 if res.npa_policy_response is not None:
     # handle response
@@ -93,7 +93,7 @@ Get a npa policy based on policy rule id
 
 ```python
 import platform
-from platform.models import operations, shared
+from platform.models import operations
 
 s = platform.Platform(
     api_key="",
@@ -103,9 +103,9 @@ req = operations.GetNpaRulesIDRequest(
     id=408556,
 )
 
-res = s.platform.get_npa_rules_id_(req)
+res = s.get_npa_rules_id_(req)
 
-if res.get_npa_rules_id_200_application_json_object is not None:
+if res.object is not None:
     # handle response
     pass
 ```
@@ -147,13 +147,13 @@ req = operations.PatchNpaRulesIDRequest(
             dlp_actions=[
                 shared.NpaPolicyRuleDlp(
                     actions=[
-                        shared.NpaPolicyRuleDlpActions.ALLOW,
+                        shared.Actions.ALLOW,
                     ],
                     dlp_profile='Payment Card',
                 ),
             ],
             json_version=3,
-            match_criteria_action=shared.NpaPolicyRuleDataMatchCriteriaAction(),
+            match_criteria_action=shared.MatchCriteriaAction(),
             net_location_obj=[
                 '190.123.150.10',
                 '190.218.0.0/16',
@@ -178,9 +178,9 @@ req = operations.PatchNpaRulesIDRequest(
                 'app2',
             ],
             private_apps_with_activities=[
-                shared.NpaPolicyRuleDataPrivateAppsWithActivities(
+                shared.PrivateAppsWithActivities(
                     activities=[
-                        shared.NpaPolicyRuleDataPrivateAppsWithActivitiesActivities(
+                        shared.Activities(
                             list_of_constraints=[
                                 'string',
                             ],
@@ -203,7 +203,7 @@ req = operations.PatchNpaRulesIDRequest(
             version=1,
         ),
         rule_name='vantest',
-        rule_order=shared.NpaPolicyRequestRuleOrder(
+        rule_order=shared.RuleOrder(
             position=5,
             rule_id=1,
             rule_name='api-policy-managed',
@@ -211,9 +211,9 @@ req = operations.PatchNpaRulesIDRequest(
     ),
 )
 
-res = s.platform.patch_npa_rules_id_(req)
+res = s.patch_npa_rules_id_(req)
 
-if res.patch_npa_rules_id_200_application_json_object is not None:
+if res.object is not None:
     # handle response
     pass
 ```
@@ -254,13 +254,13 @@ req = operations.PostNpaRulesRequest(
             dlp_actions=[
                 shared.NpaPolicyRuleDlp(
                     actions=[
-                        shared.NpaPolicyRuleDlpActions.ALLOW,
+                        shared.Actions.ALLOW,
                     ],
                     dlp_profile='Payment Card',
                 ),
             ],
             json_version=3,
-            match_criteria_action=shared.NpaPolicyRuleDataMatchCriteriaAction(),
+            match_criteria_action=shared.MatchCriteriaAction(),
             net_location_obj=[
                 '190.123.150.10',
                 '190.218.0.0/16',
@@ -285,9 +285,9 @@ req = operations.PostNpaRulesRequest(
                 'app2',
             ],
             private_apps_with_activities=[
-                shared.NpaPolicyRuleDataPrivateAppsWithActivities(
+                shared.PrivateAppsWithActivities(
                     activities=[
-                        shared.NpaPolicyRuleDataPrivateAppsWithActivitiesActivities(
+                        shared.Activities(
                             list_of_constraints=[
                                 'string',
                             ],
@@ -310,7 +310,7 @@ req = operations.PostNpaRulesRequest(
             version=1,
         ),
         rule_name='vantest',
-        rule_order=shared.NpaPolicyRequestRuleOrder(
+        rule_order=shared.RuleOrder(
             position=5,
             rule_id=1,
             rule_name='api-policy-managed',
@@ -318,7 +318,7 @@ req = operations.PostNpaRulesRequest(
     ),
 )
 
-res = s.platform.post_npa_rules(req)
+res = s.post_npa_rules(req)
 
 if res.npa_policy_response_item is not None:
     # handle response

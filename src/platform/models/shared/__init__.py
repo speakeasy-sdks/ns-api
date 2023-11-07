@@ -6,4 +6,4 @@ from .npa_policy_rule_data import *
 from .npa_policy_rule_dlp import *
 from .security import *
 
-__all__ = ["NpaPolicyRequest","NpaPolicyRequestRuleOrder","NpaPolicyRequestRuleOrderOrder","NpaPolicyResponseItem","NpaPolicyRuleData","NpaPolicyRuleDataAccessMethod","NpaPolicyRuleDataMatchCriteriaAction","NpaPolicyRuleDataMatchCriteriaActionActionName","NpaPolicyRuleDataPolicyType","NpaPolicyRuleDataPrivateAppsWithActivities","NpaPolicyRuleDataPrivateAppsWithActivitiesActivities","NpaPolicyRuleDataPrivateAppsWithActivitiesActivitiesActivity","NpaPolicyRuleDataUserType","NpaPolicyRuleDlp","NpaPolicyRuleDlpActions","Security"]
+__all__ = ["AccessMethod","ActionName","Actions","Activities","Activity","MatchCriteriaAction","NpaPolicyRequest","NpaPolicyResponseItem","NpaPolicyRuleData","NpaPolicyRuleDlp","Order","PolicyType","PrivateAppsWithActivities","RuleOrder","Security","UserType"]

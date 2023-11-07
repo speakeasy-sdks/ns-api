@@ -2,7 +2,7 @@
 
 from __future__ import annotations
 import dataclasses
-from ..shared import npa_policy_rule_data as shared_npa_policy_rule_data
+from .npa_policy_rule_data import NpaPolicyRuleData
 from dataclasses_json import Undefined, dataclass_json
 from platform import utils
 from typing import Optional
@@ -12,7 +12,7 @@ from typing import Optional
 @dataclasses.dataclass
 class NpaPolicyResponseItem:
     group_id: Optional[int] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('group_id'), 'exclude': lambda f: f is None }})
-    rule_data: Optional[shared_npa_policy_rule_data.NpaPolicyRuleData] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('rule_data'), 'exclude': lambda f: f is None }})
+    rule_data: Optional[NpaPolicyRuleData] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('rule_data'), 'exclude': lambda f: f is None }})
     rule_id: Optional[int] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('rule_id'), 'exclude': lambda f: f is None }})
     rule_name: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('rule_name'), 'exclude': lambda f: f is None }})
     

@@ -1,4 +1,4 @@
-# NpaPolicyRuleDataUserType
+# UserType
 
 
 ## Values

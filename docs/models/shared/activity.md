@@ -1,4 +1,4 @@
-# NpaPolicyRuleDataPrivateAppsWithActivitiesActivitiesActivity
+# Activity
 
 
 ## Values

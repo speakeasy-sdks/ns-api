@@ -26,9 +26,9 @@ class Platform:
         :param api_key: The api_key required for authentication
         :type api_key: str
         :param base_path: Allows setting the basePath variable for url substitution
-        :type base_path: str
+        :type base_path: 
         :param tenant: Allows setting the tenant variable for url substitution
-        :type tenant: str
+        :type tenant: 
         :param server_idx: The index of the server to use for all operations
         :type server_idx: int
         :param server_url: The server URL to use for all operations
@@ -83,8 +83,8 @@ class Platform:
         
         if http_res.status_code == 200:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[operations.DeleteNpaRulesID200ApplicationJSON])
-                res.delete_npa_rules_id_200_application_json_object = out
+                out = utils.unmarshal_json(http_res.text, Optional[operations.DeleteNpaRulesIDResponseBody])
+                res.object = out
             else:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code == 400:
@@ -159,8 +159,8 @@ class Platform:
         
         if http_res.status_code == 200:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[operations.GetNpaRulesID200ApplicationJSON])
-                res.get_npa_rules_id_200_application_json_object = out
+                out = utils.unmarshal_json(http_res.text, Optional[operations.GetNpaRulesIDResponseBody])
+                res.object = out
             else:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code == 400:
@@ -202,8 +202,8 @@ class Platform:
         
         if http_res.status_code == 200:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[operations.PatchNpaRulesID200ApplicationJSON])
-                res.patch_npa_rules_id_200_application_json_object = out
+                out = utils.unmarshal_json(http_res.text, Optional[operations.PatchNpaRulesIDResponseBody])
+                res.object = out
             else:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code == 400:

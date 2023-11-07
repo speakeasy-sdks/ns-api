@@ -1,4 +1,4 @@
-# PatchNpaRulesIDSilent
+# Silent
 
 flag to skip output except status code
 

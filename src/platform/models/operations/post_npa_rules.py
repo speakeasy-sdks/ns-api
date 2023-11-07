@@ -3,12 +3,12 @@
 from __future__ import annotations
 import dataclasses
 import requests as requests_http
-from ..shared import npa_policy_request as shared_npa_policy_request
-from ..shared import npa_policy_response_item as shared_npa_policy_response_item
+from ...models.shared import npa_policy_request as shared_npa_policy_request
+from ...models.shared import npa_policy_response_item as shared_npa_policy_response_item
 from enum import Enum
 from typing import Optional
 
-class PostNpaRulesSilent(str, Enum):
+class QueryParamSilent(str, Enum):
     r"""flag to skip output except status code"""
     ONE = '1'
     ZERO = '0'
@@ -17,7 +17,7 @@ class PostNpaRulesSilent(str, Enum):
 @dataclasses.dataclass
 class PostNpaRulesRequest:
     npa_policy_request: shared_npa_policy_request.NpaPolicyRequest = dataclasses.field(metadata={'request': { 'media_type': 'application/json' }})
-    silent: Optional[PostNpaRulesSilent] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'silent', 'style': 'form', 'explode': True }})
+    silent: Optional[QueryParamSilent] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'silent', 'style': 'form', 'explode': True }})
     r"""flag to skip output except status code"""
     
 

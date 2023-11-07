@@ -1,4 +1,4 @@
-# PostNpaRulesSilent
+# QueryParamSilent
 
 flag to skip output except status code
 

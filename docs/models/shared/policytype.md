@@ -1,4 +1,4 @@
-# NpaPolicyRuleDataPolicyType
+# PolicyType
 
 
 ## Values

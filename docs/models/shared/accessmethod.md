@@ -1,4 +1,4 @@
-# NpaPolicyRuleDataAccessMethod
+# AccessMethod
 
 
 ## Values

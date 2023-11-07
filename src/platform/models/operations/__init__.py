@@ -6,4 +6,4 @@ from .get_npa_rules_id_ import *
 from .patch_npa_rules_id_ import *
 from .post_npa_rules import *
 
-__all__ = ["DeleteNpaRulesID200ApplicationJSON","DeleteNpaRulesID200ApplicationJSONStatus","DeleteNpaRulesIDRequest","DeleteNpaRulesIDResponse","GetNpaRulesID200ApplicationJSON","GetNpaRulesID200ApplicationJSONStatus","GetNpaRulesIDRequest","GetNpaRulesIDResponse","GetNpaRulesRequest","GetNpaRulesResponse","PatchNpaRulesID200ApplicationJSON","PatchNpaRulesID200ApplicationJSONStatus","PatchNpaRulesIDRequest","PatchNpaRulesIDResponse","PatchNpaRulesIDSilent","PostNpaRulesRequest","PostNpaRulesResponse","PostNpaRulesSilent"]
+__all__ = ["DeleteNpaRulesIDRequest","DeleteNpaRulesIDResponse","DeleteNpaRulesIDResponseBody","GetNpaRulesIDRequest","GetNpaRulesIDResponse","GetNpaRulesIDResponseBody","GetNpaRulesIDStatus","GetNpaRulesRequest","GetNpaRulesResponse","PatchNpaRulesIDRequest","PatchNpaRulesIDResponse","PatchNpaRulesIDResponseBody","PatchNpaRulesIDStatus","PostNpaRulesRequest","PostNpaRulesResponse","QueryParamSilent","Silent","Status"]

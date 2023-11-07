@@ -3,7 +3,7 @@
 from __future__ import annotations
 import dataclasses
 import requests as requests_http
-from ..shared import npa_policy_response_item as shared_npa_policy_response_item
+from ...models.shared import npa_policy_response_item as shared_npa_policy_response_item
 from typing import List, Optional
 
 

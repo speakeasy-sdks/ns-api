@@ -1,4 +1,4 @@
-# NpaPolicyRuleDlpActions
+# Actions
 
 
 ## Values

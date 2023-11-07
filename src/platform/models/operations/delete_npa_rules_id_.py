@@ -3,7 +3,7 @@
 from __future__ import annotations
 import dataclasses
 import requests as requests_http
-from ..shared import npa_policy_response_item as shared_npa_policy_response_item
+from ...models.shared import npa_policy_response_item as shared_npa_policy_response_item
 from dataclasses_json import Undefined, dataclass_json
 from enum import Enum
 from platform import utils
@@ -17,17 +17,17 @@ class DeleteNpaRulesIDRequest:
     
 
 
-class DeleteNpaRulesID200ApplicationJSONStatus(str, Enum):
+class Status(str, Enum):
     SUCCESS = 'success'
     ERROR = 'error'
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
-class DeleteNpaRulesID200ApplicationJSON:
+class DeleteNpaRulesIDResponseBody:
     r"""successful operation"""
     data: Optional[shared_npa_policy_response_item.NpaPolicyResponseItem] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('data'), 'exclude': lambda f: f is None }})
-    status: Optional[DeleteNpaRulesID200ApplicationJSONStatus] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('status'), 'exclude': lambda f: f is None }})
+    status: Optional[Status] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('status'), 'exclude': lambda f: f is None }})
     
 
 
@@ -38,7 +38,7 @@ class DeleteNpaRulesIDResponse:
     r"""HTTP response content type for this operation"""
     status_code: int = dataclasses.field()
     r"""HTTP response status code for this operation"""
-    delete_npa_rules_id_200_application_json_object: Optional[DeleteNpaRulesID200ApplicationJSON] = dataclasses.field(default=None)
+    object: Optional[DeleteNpaRulesIDResponseBody] = dataclasses.field(default=None)
     r"""successful operation"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
     r"""Raw HTTP response; suitable for custom response parsing"""

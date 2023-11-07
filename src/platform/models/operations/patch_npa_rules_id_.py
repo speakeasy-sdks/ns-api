@@ -3,14 +3,14 @@
 from __future__ import annotations
 import dataclasses
 import requests as requests_http
-from ..shared import npa_policy_request as shared_npa_policy_request
-from ..shared import npa_policy_response_item as shared_npa_policy_response_item
+from ...models.shared import npa_policy_request as shared_npa_policy_request
+from ...models.shared import npa_policy_response_item as shared_npa_policy_response_item
 from dataclasses_json import Undefined, dataclass_json
 from enum import Enum
 from platform import utils
 from typing import Optional
 
-class PatchNpaRulesIDSilent(str, Enum):
+class Silent(str, Enum):
     r"""flag to skip output except status code"""
     ONE = '1'
     ZERO = '0'
@@ -21,22 +21,22 @@ class PatchNpaRulesIDRequest:
     id: int = dataclasses.field(metadata={'path_param': { 'field_name': 'id', 'style': 'simple', 'explode': False }})
     r"""policy rule id"""
     npa_policy_request: shared_npa_policy_request.NpaPolicyRequest = dataclasses.field(metadata={'request': { 'media_type': 'application/json' }})
-    silent: Optional[PatchNpaRulesIDSilent] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'silent', 'style': 'form', 'explode': True }})
+    silent: Optional[Silent] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'silent', 'style': 'form', 'explode': True }})
     r"""flag to skip output except status code"""
     
 
 
-class PatchNpaRulesID200ApplicationJSONStatus(str, Enum):
+class PatchNpaRulesIDStatus(str, Enum):
     SUCCESS = 'success'
     ERROR = 'error'
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
-class PatchNpaRulesID200ApplicationJSON:
+class PatchNpaRulesIDResponseBody:
     r"""successful operation"""
     data: Optional[shared_npa_policy_response_item.NpaPolicyResponseItem] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('data'), 'exclude': lambda f: f is None }})
-    status: Optional[PatchNpaRulesID200ApplicationJSONStatus] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('status'), 'exclude': lambda f: f is None }})
+    status: Optional[PatchNpaRulesIDStatus] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('status'), 'exclude': lambda f: f is None }})
     
 
 
@@ -47,7 +47,7 @@ class PatchNpaRulesIDResponse:
     r"""HTTP response content type for this operation"""
     status_code: int = dataclasses.field()
     r"""HTTP response status code for this operation"""
-    patch_npa_rules_id_200_application_json_object: Optional[PatchNpaRulesID200ApplicationJSON] = dataclasses.field(default=None)
+    object: Optional[PatchNpaRulesIDResponseBody] = dataclasses.field(default=None)
     r"""successful operation"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
     r"""Raw HTTP response; suitable for custom response parsing"""

@@ -2,39 +2,39 @@
 
 from __future__ import annotations
 import dataclasses
-from ..shared import npa_policy_rule_dlp as shared_npa_policy_rule_dlp
+from .npa_policy_rule_dlp import NpaPolicyRuleDlp
 from dataclasses_json import Undefined, dataclass_json
 from enum import Enum
 from platform import utils
 from typing import List, Optional
 
-class NpaPolicyRuleDataAccessMethod(str, Enum):
+class AccessMethod(str, Enum):
     CLIENT = 'Client'
     CLIENTLESS = 'Clientless'
 
-class NpaPolicyRuleDataMatchCriteriaActionActionName(str, Enum):
+class ActionName(str, Enum):
     ALLOW = 'allow'
     BLOCK = 'block'
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
-class NpaPolicyRuleDataMatchCriteriaAction:
-    action_name: Optional[NpaPolicyRuleDataMatchCriteriaActionActionName] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('action_name'), 'exclude': lambda f: f is None }})
+class MatchCriteriaAction:
+    action_name: Optional[ActionName] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('action_name'), 'exclude': lambda f: f is None }})
     
 
 
-class NpaPolicyRuleDataPolicyType(str, Enum):
+class PolicyType(str, Enum):
     PRIVATE_APP = 'private-app'
 
-class NpaPolicyRuleDataPrivateAppsWithActivitiesActivitiesActivity(str, Enum):
+class Activity(str, Enum):
     ANY = 'any'
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
-class NpaPolicyRuleDataPrivateAppsWithActivitiesActivities:
-    activity: Optional[NpaPolicyRuleDataPrivateAppsWithActivitiesActivitiesActivity] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('activity'), 'exclude': lambda f: f is None }})
+class Activities:
+    activity: Optional[Activity] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('activity'), 'exclude': lambda f: f is None }})
     list_of_constraints: Optional[List[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('list_of_constraints'), 'exclude': lambda f: f is None }})
     
 
@@ -42,40 +42,40 @@ class NpaPolicyRuleDataPrivateAppsWithActivitiesActivities:
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
-class NpaPolicyRuleDataPrivateAppsWithActivities:
-    activities: Optional[List[NpaPolicyRuleDataPrivateAppsWithActivitiesActivities]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('activities'), 'exclude': lambda f: f is None }})
+class PrivateAppsWithActivities:
+    activities: Optional[List[Activities]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('activities'), 'exclude': lambda f: f is None }})
     app_name: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('appName'), 'exclude': lambda f: f is None }})
     
 
 
-class NpaPolicyRuleDataUserType(str, Enum):
+class UserType(str, Enum):
     USER = 'user'
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
 class NpaPolicyRuleData:
-    access_method: Optional[NpaPolicyRuleDataAccessMethod] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('access_method'), 'exclude': lambda f: f is None }})
+    access_method: Optional[AccessMethod] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('access_method'), 'exclude': lambda f: f is None }})
     b_negate_net_location: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('b_negateNetLocation'), 'exclude': lambda f: f is None }})
     b_negate_src_countries: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('b_negateSrcCountries'), 'exclude': lambda f: f is None }})
     classification: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('classification'), 'exclude': lambda f: f is None }})
-    dlp_actions: Optional[List[shared_npa_policy_rule_dlp.NpaPolicyRuleDlp]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('dlp_actions'), 'exclude': lambda f: f is None }})
+    dlp_actions: Optional[List[NpaPolicyRuleDlp]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('dlp_actions'), 'exclude': lambda f: f is None }})
     external_dlp: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('external_dlp'), 'exclude': lambda f: f is None }})
     json_version: Optional[int] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('json_version'), 'exclude': lambda f: f is None }})
-    match_criteria_action: Optional[NpaPolicyRuleDataMatchCriteriaAction] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('match_criteria_action'), 'exclude': lambda f: f is None }})
+    match_criteria_action: Optional[MatchCriteriaAction] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('match_criteria_action'), 'exclude': lambda f: f is None }})
     net_location_obj: Optional[List[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('net_location_obj'), 'exclude': lambda f: f is None }})
     organization_units: Optional[List[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('organization_units'), 'exclude': lambda f: f is None }})
-    policy_type: Optional[NpaPolicyRuleDataPolicyType] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('policy_type'), 'exclude': lambda f: f is None }})
+    policy_type: Optional[PolicyType] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('policy_type'), 'exclude': lambda f: f is None }})
     private_app_ids: Optional[List[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('privateAppIds'), 'exclude': lambda f: f is None }})
     private_apps: Optional[List[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('privateApps'), 'exclude': lambda f: f is None }})
-    private_apps_with_activities: Optional[List[NpaPolicyRuleDataPrivateAppsWithActivities]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('privateAppsWithActivities'), 'exclude': lambda f: f is None }})
+    private_apps_with_activities: Optional[List[PrivateAppsWithActivities]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('privateAppsWithActivities'), 'exclude': lambda f: f is None }})
     private_app_tag_ids: Optional[List[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('privateAppTagIds'), 'exclude': lambda f: f is None }})
     private_app_tags: Optional[List[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('privateAppTags'), 'exclude': lambda f: f is None }})
     show_dlp_profile_action_table: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('show_dlp_profile_action_table'), 'exclude': lambda f: f is None }})
     src_countries: Optional[List[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('srcCountries'), 'exclude': lambda f: f is None }})
     user_groups: Optional[List[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('userGroups'), 'exclude': lambda f: f is None }})
     users: Optional[List[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('users'), 'exclude': lambda f: f is None }})
-    user_type: Optional[NpaPolicyRuleDataUserType] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('userType'), 'exclude': lambda f: f is None }})
+    user_type: Optional[UserType] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('userType'), 'exclude': lambda f: f is None }})
     version: Optional[int] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('version'), 'exclude': lambda f: f is None }})
     
 

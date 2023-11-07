@@ -18,7 +18,7 @@ pip install git+https://github.com/speakeasy-sdks/ns-api.git
 <!-- Start SDK Example Usage -->
 ```python
 import platform
-from platform.models import operations, shared
+from platform.models import operations
 
 s = platform.Platform(
     api_key="",
@@ -28,9 +28,9 @@ req = operations.DeleteNpaRulesIDRequest(
     id=324988,
 )
 
-res = s.platform.delete_npa_rules_id_(req)
+res = s.delete_npa_rules_id_(req)
 
-if res.delete_npa_rules_id_200_application_json_object is not None:
+if res.object is not None:
     # handle response
     pass
 ```
@@ -74,7 +74,7 @@ Handling errors in your SDK should largely match your expectations.  All operati
 
 ```python
 import platform
-from platform.models import operations, shared
+from platform.models import operations
 
 s = platform.Platform(
     api_key="",
@@ -86,13 +86,13 @@ req = operations.DeleteNpaRulesIDRequest(
 
 res = None
 try:
-    res = s.platform.delete_npa_rules_id_(req)
+    res = s.delete_npa_rules_id_(req)
 
 except (npa_policy_response_400) as e:
     print(e) # handle exception
 
 
-if res.delete_npa_rules_id_200_application_json_object is not None:
+if res.object is not None:
     # handle response
     pass
 ```
@@ -119,23 +119,22 @@ Some of the server options above contain variables. If you want to set the value
 
 For example:
 
-
 ```python
 import platform
-from platform.models import operations, shared
+from platform.models import operations
 
 s = platform.Platform(
+    server_idx=0,
     api_key="",
-    server_idx=0
 )
 
 req = operations.DeleteNpaRulesIDRequest(
     id=324988,
 )
 
-res = s.platform.delete_npa_rules_id_(req)
+res = s.delete_npa_rules_id_(req)
 
-if res.delete_npa_rules_id_200_application_json_object is not None:
+if res.object is not None:
     # handle response
     pass
 ```
@@ -145,23 +144,22 @@ if res.delete_npa_rules_id_200_application_json_object is not None:
 
 The default server can also be overridden globally by passing a URL to the `server_url: str` optional parameter when initializing the SDK client instance. For example:
 
-
 ```python
 import platform
-from platform.models import operations, shared
+from platform.models import operations
 
 s = platform.Platform(
+    server_url="https://{tenant}.goskope.com:/{basePath}",
     api_key="",
-    server_url="https://{tenant}.goskope.com:/{basePath}"
 )
 
 req = operations.DeleteNpaRulesIDRequest(
     id=324988,
 )
 
-res = s.platform.delete_npa_rules_id_(req)
+res = s.delete_npa_rules_id_(req)
 
-if res.delete_npa_rules_id_200_application_json_object is not None:
+if res.object is not None:
     # handle response
     pass
 ```
@@ -185,9 +183,43 @@ http_client = requests.Session()
 http_client.headers.update({'x-custom-header': 'someValue'})
 s = platform.Platform(client: http_client)
 ```
-
-
 <!-- End Custom HTTP Client -->
+
+
+
+<!-- Start Authentication -->
+
+# Authentication
+
+## Per-Client Security Schemes
+
+Your SDK supports the following security scheme globally:
+
+| Name      | Type      | Scheme    |
+| --------- | --------- | --------- |
+| `api_key` | apiKey    | API key   |
+
+To authenticate with the API the `api_key` parameter must be set when initializing the SDK client instance. For example:
+
+```python
+import platform
+from platform.models import operations
+
+s = platform.Platform(
+    api_key="",
+)
+
+req = operations.DeleteNpaRulesIDRequest(
+    id=324988,
+)
+
+res = s.delete_npa_rules_id_(req)
+
+if res.object is not None:
+    # handle response
+    pass
+```
+<!-- End Authentication -->
 
 <!-- Placeholder for Future Speakeasy SDK Sections -->
 

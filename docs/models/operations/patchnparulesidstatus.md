@@ -1,4 +1,4 @@
-# PatchNpaRulesID200ApplicationJSONStatus
+# PatchNpaRulesIDStatus
 
 
 ## Values

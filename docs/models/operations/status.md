@@ -1,4 +1,4 @@
-# GetNpaRulesID200ApplicationJSONStatus
+# Status
 
 
 ## Values
