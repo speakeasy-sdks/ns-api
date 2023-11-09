@@ -4,7 +4,7 @@ import requests as requests_http
 from .sdkconfiguration import SDKConfiguration
 from platform import utils
 from platform.models import errors, operations, shared
-from typing import Dict, List, Optional
+from typing import Callable, Dict, List, Optional, Union
 
 class Platform:
     r"""npa_policy: NPA policy CRUD operations."""
@@ -12,7 +12,7 @@ class Platform:
     sdk_configuration: SDKConfiguration
 
     def __init__(self,
-                 api_key: str,
+                 api_key: Union[str,Callable[[], str]],
                  base_path: str = None,
                  tenant: str = None,
                  server_idx: int = None,
@@ -24,7 +24,7 @@ class Platform:
         """Instantiates the SDK configuring it with the provided parameters.
         
         :param api_key: The api_key required for authentication
-        :type api_key: str
+        :type api_key: Union[str,Callable[[], str]]
         :param base_path: Allows setting the basePath variable for url substitution
         :type base_path: 
         :param tenant: Allows setting the tenant variable for url substitution
@@ -43,9 +43,7 @@ class Platform:
         if client is None:
             client = requests_http.Session()
         
-        
-        security_client = utils.configure_security_client(client, shared.Security(api_key = api_key))
-        
+        security = shared.Security(api_key = api_key)
         
         if server_url is not None:
             if url_params is not None:
@@ -57,9 +55,10 @@ class Platform:
             },
         ]
 
-        self.sdk_configuration = SDKConfiguration(client, security_client, server_url, server_idx, server_defaults, retry_config=retry_config)
+        self.sdk_configuration = SDKConfiguration(client, security, server_url, server_idx, server_defaults, retry_config=retry_config)
        
         
+    
     
     
     
@@ -74,7 +73,10 @@ class Platform:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('DELETE', url, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -100,6 +102,7 @@ class Platform:
         return res
 
     
+    
     def get_npa_rules(self, request: operations.GetNpaRulesRequest) -> operations.GetNpaRulesResponse:
         r"""Get list of npa policies
         Get list of npa policies
@@ -112,7 +115,10 @@ class Platform:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('GET', url, params=query_params, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -138,6 +144,7 @@ class Platform:
         return res
 
     
+    
     def get_npa_rules_id_(self, request: operations.GetNpaRulesIDRequest) -> operations.GetNpaRulesIDResponse:
         r"""Get a npa policy
         Get a npa policy based on policy rule id
@@ -150,7 +157,10 @@ class Platform:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('GET', url, params=query_params, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -176,6 +186,7 @@ class Platform:
         return res
 
     
+    
     def patch_npa_rules_id_(self, request: operations.PatchNpaRulesIDRequest) -> operations.PatchNpaRulesIDResponse:
         r"""Patch a npa policy
         Patch a npa policy based on rule id
@@ -193,7 +204,10 @@ class Platform:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('PATCH', url, params=query_params, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -219,6 +233,7 @@ class Platform:
         return res
 
     
+    
     def post_npa_rules(self, request: operations.PostNpaRulesRequest) -> operations.PostNpaRulesResponse:
         r"""Create a npa policy
         Create a policy
@@ -236,7 +251,10 @@ class Platform:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, params=query_params, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')

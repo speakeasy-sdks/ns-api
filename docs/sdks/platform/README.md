@@ -48,7 +48,12 @@ if res.object is not None:
 ### Response
 
 **[operations.DeleteNpaRulesIDResponse](../../models/operations/deletenparulesidresponse.md)**
+### Errors
 
+| Error Object                | Status Code                 | Content Type                |
+| --------------------------- | --------------------------- | --------------------------- |
+| errors.NpaPolicyResponse400 | 400                         | application/json            |
+| errors.SDKError             | 400-600                     | */*                         |
 
 ## get_npa_rules
 
@@ -83,7 +88,12 @@ if res.npa_policy_response is not None:
 ### Response
 
 **[operations.GetNpaRulesResponse](../../models/operations/getnparulesresponse.md)**
+### Errors
 
+| Error Object                | Status Code                 | Content Type                |
+| --------------------------- | --------------------------- | --------------------------- |
+| errors.NpaPolicyResponse400 | 400                         | application/json            |
+| errors.SDKError             | 400-600                     | */*                         |
 
 ## get_npa_rules_id_
 
@@ -120,7 +130,12 @@ if res.object is not None:
 ### Response
 
 **[operations.GetNpaRulesIDResponse](../../models/operations/getnparulesidresponse.md)**
+### Errors
 
+| Error Object                | Status Code                 | Content Type                |
+| --------------------------- | --------------------------- | --------------------------- |
+| errors.NpaPolicyResponse400 | 400                         | application/json            |
+| errors.SDKError             | 400-600                     | */*                         |
 
 ## patch_npa_rules_id_
 
@@ -228,7 +243,12 @@ if res.object is not None:
 ### Response
 
 **[operations.PatchNpaRulesIDResponse](../../models/operations/patchnparulesidresponse.md)**
+### Errors
 
+| Error Object                | Status Code                 | Content Type                |
+| --------------------------- | --------------------------- | --------------------------- |
+| errors.NpaPolicyResponse400 | 400                         | application/json            |
+| errors.SDKError             | 400-600                     | */*                         |
 
 ## post_npa_rules
 
@@ -335,4 +355,9 @@ if res.npa_policy_response_item is not None:
 ### Response
 
 **[operations.PostNpaRulesResponse](../../models/operations/postnparulesresponse.md)**
+### Errors
 
+| Error Object                | Status Code                 | Content Type                |
+| --------------------------- | --------------------------- | --------------------------- |
+| errors.NpaPolicyResponse400 | 400                         | application/json            |
+| errors.SDKError             | 400-600                     | */*                         |
