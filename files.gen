@@ -7,6 +7,7 @@ src/platform/utils/__init__.py
 src/platform/utils/retries.py
 src/platform/utils/utils.py
 src/platform/models/errors/sdkerror.py
+tests/helpers.py
 src/platform/models/operations/delete_npa_rules_id_.py
 src/platform/models/operations/get_npa_rules.py
 src/platform/models/operations/get_npa_rules_id_.py
