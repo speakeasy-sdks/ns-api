@@ -23,7 +23,6 @@ src/platform/models/__init__.py
 src/platform/models/errors/__init__.py
 src/platform/models/operations/__init__.py
 src/platform/models/shared/__init__.py
-USAGE.md
 docs/models/operations/deletenparulesidrequest.md
 docs/models/operations/status.md
 docs/models/operations/deletenparulesidresponsebody.md
@@ -60,4 +59,5 @@ docs/models/shared/npapolicyrequest.md
 docs/models/shared/security.md
 docs/models/errors/npapolicyresponse400.md
 docs/sdks/platform/README.md
+USAGE.md
 .gitattributes
