@@ -4,7 +4,7 @@ import requests as requests_http
 from .sdkconfiguration import SDKConfiguration
 from platform import utils
 from platform.models import errors, operations, shared
-from typing import Callable, Dict, List, Optional, Union
+from typing import Dict, List, Optional
 
 class Platform:
     r"""npa_policy: NPA policy CRUD operations."""
@@ -12,7 +12,7 @@ class Platform:
     sdk_configuration: SDKConfiguration
 
     def __init__(self,
-                 api_key: Union[str,Callable[[], str]],
+                 api_key: str ,
                  base_path: str = None,
                  tenant: str = None,
                  server_idx: int = None,
@@ -195,7 +195,7 @@ class Platform:
         
         url = utils.generate_url(operations.PatchNpaRulesIDRequest, base_url, '/npa/rules/{id}', request)
         headers = {}
-        req_content_type, data, form = utils.serialize_request_body(request, "npa_policy_request", False, False, 'json')
+        req_content_type, data, form = utils.serialize_request_body(request, operations.PatchNpaRulesIDRequest, "npa_policy_request", False, False, 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         if data is None and form is None:
@@ -242,7 +242,7 @@ class Platform:
         
         url = base_url + '/npa/rules'
         headers = {}
-        req_content_type, data, form = utils.serialize_request_body(request, "npa_policy_request", False, False, 'json')
+        req_content_type, data, form = utils.serialize_request_body(request, operations.PostNpaRulesRequest, "npa_policy_request", False, False, 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         if data is None and form is None:

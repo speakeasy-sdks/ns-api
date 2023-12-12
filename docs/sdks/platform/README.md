@@ -24,7 +24,7 @@ import platform
 from platform.models import operations
 
 s = platform.Platform(
-    api_key="",
+    api_key="<YOUR_API_KEY_HERE>",
 )
 
 req = operations.DeleteNpaRulesIDRequest(
@@ -66,7 +66,7 @@ import platform
 from platform.models import operations
 
 s = platform.Platform(
-    api_key="",
+    api_key="<YOUR_API_KEY_HERE>",
 )
 
 req = operations.GetNpaRulesRequest()
@@ -106,7 +106,7 @@ import platform
 from platform.models import operations
 
 s = platform.Platform(
-    api_key="",
+    api_key="<YOUR_API_KEY_HERE>",
 )
 
 req = operations.GetNpaRulesIDRequest(
@@ -148,7 +148,7 @@ import platform
 from platform.models import operations, shared
 
 s = platform.Platform(
-    api_key="",
+    api_key="<YOUR_API_KEY_HERE>",
 )
 
 req = operations.PatchNpaRulesIDRequest(
@@ -261,7 +261,7 @@ import platform
 from platform.models import operations, shared
 
 s = platform.Platform(
-    api_key="",
+    api_key="<YOUR_API_KEY_HERE>",
 )
 
 req = operations.PostNpaRulesRequest(

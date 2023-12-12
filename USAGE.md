@@ -4,7 +4,7 @@ import platform
 from platform.models import operations
 
 s = platform.Platform(
-    api_key="",
+    api_key="<YOUR_API_KEY_HERE>",
 )
 
 req = operations.DeleteNpaRulesIDRequest(

@@ -24,7 +24,7 @@ import platform
 from platform.models import operations
 
 s = platform.Platform(
-    api_key="",
+    api_key="<YOUR_API_KEY_HERE>",
 )
 
 req = operations.DeleteNpaRulesIDRequest(
@@ -70,7 +70,7 @@ import platform
 from platform.models import operations
 
 s = platform.Platform(
-    api_key="",
+    api_key="<YOUR_API_KEY_HERE>",
 )
 
 req = operations.DeleteNpaRulesIDRequest(
@@ -114,7 +114,7 @@ from platform.models import operations
 
 s = platform.Platform(
     server_idx=0,
-    api_key="",
+    api_key="<YOUR_API_KEY_HERE>",
 )
 
 req = operations.DeleteNpaRulesIDRequest(
@@ -143,7 +143,7 @@ from platform.models import operations
 
 s = platform.Platform(
     server_url="https://{tenant}.goskope.com:/{basePath}",
-    api_key="",
+    api_key="<YOUR_API_KEY_HERE>",
 )
 
 req = operations.DeleteNpaRulesIDRequest(
@@ -195,7 +195,7 @@ import platform
 from platform.models import operations
 
 s = platform.Platform(
-    api_key="",
+    api_key="<YOUR_API_KEY_HERE>",
 )
 
 req = operations.DeleteNpaRulesIDRequest(
