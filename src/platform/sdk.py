@@ -4,7 +4,7 @@ import requests as requests_http
 from .sdkconfiguration import SDKConfiguration
 from platform import utils
 from platform.models import errors, operations, shared
-from typing import Dict, List, Optional
+from typing import Callable, Dict, List, Optional, Union
 
 class Platform:
     r"""npa_policy: NPA policy CRUD operations."""
@@ -12,7 +12,7 @@ class Platform:
     sdk_configuration: SDKConfiguration
 
     def __init__(self,
-                 api_key: str ,
+                 api_key: Union[str, Callable[[], str]],
                  base_path: str = None,
                  tenant: str = None,
                  server_idx: int = None,
@@ -24,7 +24,7 @@ class Platform:
         """Instantiates the SDK configuring it with the provided parameters.
         
         :param api_key: The api_key required for authentication
-        :type api_key: Union[str,Callable[[], str]]
+        :type api_key: Union[str, Callable[[], str]]
         :param base_path: Allows setting the basePath variable for url substitution
         :type base_path: 
         :param tenant: Allows setting the tenant variable for url substitution
@@ -43,7 +43,11 @@ class Platform:
         if client is None:
             client = requests_http.Session()
         
-        security = shared.Security(api_key = api_key)
+        if callable(api_key):
+            def security():
+                return shared.Security(api_key = api_key())
+        else:
+            security = shared.Security(api_key = api_key)
         
         if server_url is not None:
             if url_params is not None:
