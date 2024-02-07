@@ -67,15 +67,15 @@ class NpaPolicyRuleData:
     organization_units: Optional[List[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('organization_units'), 'exclude': lambda f: f is None }})
     policy_type: Optional[PolicyType] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('policy_type'), 'exclude': lambda f: f is None }})
     private_app_ids: Optional[List[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('privateAppIds'), 'exclude': lambda f: f is None }})
-    private_apps: Optional[List[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('privateApps'), 'exclude': lambda f: f is None }})
-    private_apps_with_activities: Optional[List[PrivateAppsWithActivities]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('privateAppsWithActivities'), 'exclude': lambda f: f is None }})
     private_app_tag_ids: Optional[List[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('privateAppTagIds'), 'exclude': lambda f: f is None }})
     private_app_tags: Optional[List[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('privateAppTags'), 'exclude': lambda f: f is None }})
+    private_apps: Optional[List[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('privateApps'), 'exclude': lambda f: f is None }})
+    private_apps_with_activities: Optional[List[PrivateAppsWithActivities]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('privateAppsWithActivities'), 'exclude': lambda f: f is None }})
     show_dlp_profile_action_table: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('show_dlp_profile_action_table'), 'exclude': lambda f: f is None }})
     src_countries: Optional[List[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('srcCountries'), 'exclude': lambda f: f is None }})
     user_groups: Optional[List[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('userGroups'), 'exclude': lambda f: f is None }})
-    users: Optional[List[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('users'), 'exclude': lambda f: f is None }})
     user_type: Optional[UserType] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('userType'), 'exclude': lambda f: f is None }})
+    users: Optional[List[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('users'), 'exclude': lambda f: f is None }})
     version: Optional[int] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('version'), 'exclude': lambda f: f is None }})
     
 
