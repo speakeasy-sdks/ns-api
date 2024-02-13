@@ -26,9 +26,9 @@ class Platform:
         :param api_key: The api_key required for authentication
         :type api_key: Union[str, Callable[[], str]]
         :param base_path: Allows setting the basePath variable for url substitution
-        :type base_path: 
+        :type base_path: str
         :param tenant: Allows setting the tenant variable for url substitution
-        :type tenant: 
+        :type tenant: str
         :param server_idx: The index of the server to use for all operations
         :type server_idx: int
         :param server_url: The server URL to use for all operations

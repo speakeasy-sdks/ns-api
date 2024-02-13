@@ -158,71 +158,7 @@ req = operations.PatchNpaRulesIDRequest(
         enabled='1',
         group_id='1',
         group_name='My policy group',
-        rule_data=shared.NpaPolicyRuleData(
-            dlp_actions=[
-                shared.NpaPolicyRuleDlp(
-                    actions=[
-                        shared.Actions.ALLOW,
-                    ],
-                    dlp_profile='Payment Card',
-                ),
-            ],
-            json_version=3,
-            match_criteria_action=shared.MatchCriteriaAction(),
-            net_location_obj=[
-                '190.123.150.10',
-                '190.218.0.0/16',
-            ],
-            organization_units=[
-                'engineering/qa',
-            ],
-            private_app_ids=[
-                '100',
-                '201',
-            ],
-            private_app_tag_ids=[
-                '1',
-                '2',
-            ],
-            private_app_tags=[
-                'tag1',
-                'tag2',
-            ],
-            private_apps=[
-                'app1',
-                'app2',
-            ],
-            private_apps_with_activities=[
-                shared.PrivateAppsWithActivities(
-                    activities=[
-                        shared.Activities(
-                            list_of_constraints=[
-                                'string',
-                            ],
-                        ),
-                    ],
-                    app_name='[172.31.12.135]',
-                ),
-            ],
-            src_countries=[
-                'US',
-                'AF',
-                'CN',
-            ],
-            user_groups=[
-                'usergroup/group1',
-            ],
-            users=[
-                'vphan@netskope.com',
-            ],
-            version=1,
-        ),
         rule_name='vantest',
-        rule_order=shared.RuleOrder(
-            position=5,
-            rule_id=1,
-            rule_name='api-policy-managed',
-        ),
     ),
 )
 
@@ -270,71 +206,7 @@ req = operations.PostNpaRulesRequest(
         enabled='1',
         group_id='1',
         group_name='My policy group',
-        rule_data=shared.NpaPolicyRuleData(
-            dlp_actions=[
-                shared.NpaPolicyRuleDlp(
-                    actions=[
-                        shared.Actions.ALLOW,
-                    ],
-                    dlp_profile='Payment Card',
-                ),
-            ],
-            json_version=3,
-            match_criteria_action=shared.MatchCriteriaAction(),
-            net_location_obj=[
-                '190.123.150.10',
-                '190.218.0.0/16',
-            ],
-            organization_units=[
-                'engineering/qa',
-            ],
-            private_app_ids=[
-                '100',
-                '201',
-            ],
-            private_app_tag_ids=[
-                '1',
-                '2',
-            ],
-            private_app_tags=[
-                'tag1',
-                'tag2',
-            ],
-            private_apps=[
-                'app1',
-                'app2',
-            ],
-            private_apps_with_activities=[
-                shared.PrivateAppsWithActivities(
-                    activities=[
-                        shared.Activities(
-                            list_of_constraints=[
-                                'string',
-                            ],
-                        ),
-                    ],
-                    app_name='[172.31.12.135]',
-                ),
-            ],
-            src_countries=[
-                'US',
-                'AF',
-                'CN',
-            ],
-            user_groups=[
-                'usergroup/group1',
-            ],
-            users=[
-                'vphan@netskope.com',
-            ],
-            version=1,
-        ),
         rule_name='vantest',
-        rule_order=shared.RuleOrder(
-            position=5,
-            rule_id=1,
-            rule_name='api-policy-managed',
-        ),
     ),
 )
 
