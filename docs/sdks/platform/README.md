@@ -36,6 +36,7 @@ res = s.delete_npa_rules_id_(req)
 if res.object is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -76,6 +77,7 @@ res = s.get_npa_rules(req)
 if res.npa_policy_response is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -118,6 +120,7 @@ res = s.get_npa_rules_id_(req)
 if res.object is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -167,6 +170,7 @@ res = s.patch_npa_rules_id_(req)
 if res.object is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -215,6 +219,7 @@ res = s.post_npa_rules(req)
 if res.npa_policy_response_item is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
