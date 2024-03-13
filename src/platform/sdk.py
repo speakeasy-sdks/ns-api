@@ -16,14 +16,14 @@ class Platform:
                  api_key: Union[str, Callable[[], str]],
                  base_path: str = None,
                  tenant: str = None,
-                 server_idx: int = None,
-                 server_url: str = None,
-                 url_params: Dict[str, str] = None,
-                 client: requests_http.Session = None,
-                 retry_config: utils.RetryConfig = None
+                 server_idx: Optional[int] = None,
+                 server_url: Optional[str] = None,
+                 url_params: Optional[Dict[str, str]] = None,
+                 client: Optional[requests_http.Session] = None,
+                 retry_config: Optional[utils.RetryConfig] = None
                  ) -> None:
         """Instantiates the SDK configuring it with the provided parameters.
-        
+
         :param api_key: The api_key required for authentication
         :type api_key: Union[str, Callable[[], str]]
         :param base_path: Allows setting the basePath variable for url substitution
@@ -43,13 +43,13 @@ class Platform:
         """
         if client is None:
             client = requests_http.Session()
-        
+
         if callable(api_key):
             def security():
                 return shared.Security(api_key = api_key())
         else:
             security = shared.Security(api_key = api_key)
-        
+
         if server_url is not None:
             if url_params is not None:
                 server_url = utils.template_url(server_url, url_params)
@@ -60,7 +60,14 @@ class Platform:
             },
         ]
 
-        self.sdk_configuration = SDKConfiguration(client, security, server_url, server_idx, server_defaults, retry_config=retry_config)
+        self.sdk_configuration = SDKConfiguration(
+            client,
+            security,
+            server_url,
+            server_idx,
+            server_defaults,
+            retry_config=retry_config
+        )
 
         hooks = SDKHooks()
 
@@ -70,13 +77,9 @@ class Platform:
             self.sdk_configuration.server_url = server_url
 
         # pylint: disable=protected-access
-        self.sdk_configuration._hooks=hooks
-       
-        
-    
-    
-    
-    
+        self.sdk_configuration._hooks = hooks
+
+
     def delete_npa_rules_id_(self, request: operations.DeleteNpaRulesIDRequest) -> operations.DeleteNpaRulesIDResponse:
         r"""Delete a npa policy
         Delete a npa policy with rule id
@@ -139,8 +142,8 @@ class Platform:
 
         return res
 
-    
-    
+
+
     def get_npa_rules(self, request: operations.GetNpaRulesRequest) -> operations.GetNpaRulesResponse:
         r"""Get list of npa policies
         Get list of npa policies
@@ -204,8 +207,8 @@ class Platform:
 
         return res
 
-    
-    
+
+
     def get_npa_rules_id_(self, request: operations.GetNpaRulesIDRequest) -> operations.GetNpaRulesIDResponse:
         r"""Get a npa policy
         Get a npa policy based on policy rule id
@@ -269,8 +272,8 @@ class Platform:
 
         return res
 
-    
-    
+
+
     def patch_npa_rules_id_(self, request: operations.PatchNpaRulesIDRequest) -> operations.PatchNpaRulesIDResponse:
         r"""Patch a npa policy
         Patch a npa policy based on rule id
@@ -339,8 +342,8 @@ class Platform:
 
         return res
 
-    
-    
+
+
     def post_npa_rules(self, request: operations.PostNpaRulesRequest) -> operations.PostNpaRulesResponse:
         r"""Create a npa policy
         Create a policy
@@ -409,4 +412,3 @@ class Platform:
 
         return res
 
-    
