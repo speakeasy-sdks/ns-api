@@ -3,17 +3,17 @@ id: a86d6f87-005f-4e7a-b5ed-1f5c9541b62a
 management:
   docChecksum: 2ce558252cc48bc50ccfd24efecd3cf4
   docVersion: 1.0.0
-  speakeasyVersion: 1.207.1
-  generationVersion: 2.280.6
-  releaseVersion: 0.10.1
-  configChecksum: 780616ba237ef7e90950d16423aa8b8b
+  speakeasyVersion: 1.213.0
+  generationVersion: 2.283.1
+  releaseVersion: 0.10.2
+  configChecksum: 6f158d38cd351265f40f190ca50cef8a
   repoURL: https://github.com/speakeasy-sdks/ns-api.git
   repoSubDirectory: .
   installationURL: https://github.com/speakeasy-sdks/ns-api.git
 features:
   python:
     core: 4.5.1
-    globalSecurity: 2.83.4
+    globalSecurity: 2.83.5
     globalServerURLs: 2.82.2
     responseFormat: 0.1.0
 generatedFiles:
